@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434c2c83-2cdd-4654-808c-092d9a46b1d9" name="Changes" comment="" />
+    <list default="true" id="a1465943-9147-4cea-b68a-b90ee5142dfd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +23,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2LsbdsY5vhhPL6DInjga3ydjSw2" />
+  <component name="ProjectId" id="2LsfjwJfbRGspovut0XvNP3JU8w" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,12 +46,12 @@
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="434c2c83-2cdd-4654-808c-092d9a46b1d9" name="Changes" comment="" />
-      <created>1676662828126</created>
+      <changelist id="a1465943-9147-4cea-b68a-b90ee5142dfd" name="Changes" comment="" />
+      <created>1676664849583</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676662828126</updated>
-      <workItem from="1676662829320" duration="1310000" />
+      <updated>1676664849583</updated>
+      <workItem from="1676664850725" duration="1805000" />
     </task>
     <servers />
   </component>
@@ -59,6 +59,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/laba1_1_3@laba1_1_3.rcov" NAME="laba1_1.3 Coverage Results" MODIFIED="1676663470354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba1_1.3" />
+    <SUITE FILE_PATH="coverage/laba1_2@laba1_2.rcov" NAME="laba1_2 Coverage Results" MODIFIED="1676666504699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba1_2" />
   </component>
 </project>
