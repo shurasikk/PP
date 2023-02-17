@@ -21,4 +21,15 @@ def task1(num)
   return k
 end
 
+def task2(num)
+  res=-1
+  num.digits.each{|i| res=i if i % 3 != 0 and i>res}
+  if res == -1
+    return "Такой цифры нет"
+  else
+    return res
+  end
+end
+
 puts task1(12)
+puts task2(573)
