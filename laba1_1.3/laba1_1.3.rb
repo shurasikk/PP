@@ -1,6 +1,6 @@
 require 'open3'
 
-puts "Введите команду языка Ruby"
+puts "#{ARGV[0]} введите команду языка Ruby"
 rubyCmd = gets.chomp()
 File.open("do.rb","w") do |file|
   file.write(rubyCmd)

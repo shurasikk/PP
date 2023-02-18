@@ -1,5 +1,9 @@
 puts "What's your name?"
-name = gets.chomp
+
+if ARGV.count < 1
+  name = "Anonim"
+  else name = ARGV[0]
+end
 puts "Hello, #{name}! What's your favorite programming language?"
 language = gets.chomp
 case language

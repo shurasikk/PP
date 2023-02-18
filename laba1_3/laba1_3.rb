@@ -14,5 +14,8 @@ def first_pos(arr)
   end
   return "Нет такого числа"
 end
+
+
+
 puts minimum([-2,2,-3,4,5,-1,-5])
 puts first_pos([-1,2,-5,-9,-3])
