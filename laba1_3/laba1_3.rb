@@ -10,12 +10,28 @@ end
 
 def first_pos(arr)
   for i in 0..arr.length-1.to_i
-    return arr[i] if arr[i]>0
+    return i if arr[i]>0
   end
   return "Нет такого числа"
 end
 
+if ARGV.count < 2
+  puts "Отсутствуют аргументы"
+  return
+end
 
+method = ARGV[0]
+path = ARGV[1]
 
-puts minimum([-2,2,-3,4,5,-1,-5])
-puts first_pos([-1,2,-5,-9,-3])
+file = File.open(path)
+array = file.readline.split(' ').map(&:to_i)
+
+puts "Массив, #{array}\n"
+case method
+when "1"
+  puts "Минимальный элемент: #{minimum(array)}"
+when "2"
+  puts "Номер первого положительного элемента: #{first_pos(array)}"
+else
+  puts "Метода с таким номером нет"
+end

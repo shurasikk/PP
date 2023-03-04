@@ -7,7 +7,7 @@ File.open("do.rb","w") do |file|
 end
 cmd = "ruby do.rb"
 Open3.pipeline(cmd)
-
+Open3.pipeline()
 puts "Введите команду операционной системы для её выполнения"
 cmd2 = gets.chomp()
 Open3.pipeline(cmd2)
