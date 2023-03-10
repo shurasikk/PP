@@ -53,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677912574493</updated>
       <workItem from="1677912575804" duration="4443000" />
-      <workItem from="1678482649798" duration="2508000" />
+      <workItem from="1678482649798" duration="2951000" />
     </task>
     <servers />
   </component>
@@ -61,6 +61,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/laba1_4@laba1_4.rcov" NAME="laba1_4 Coverage Results" MODIFIED="1678487200714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba1_4" />
+    <SUITE FILE_PATH="coverage/laba1_4@laba1_4.rcov" NAME="laba1_4 Coverage Results" MODIFIED="1678487968142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba1_4" />
   </component>
 </project>

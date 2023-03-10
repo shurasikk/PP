@@ -31,3 +31,9 @@ end
 
 
 between_two_maxes([1,9,-3,7,8,9])
+
+def min_even(arr)
+  puts arr.select {|m| m%2==0}.min
+end
+
+min_even([1,9,-3,7,8,9])
