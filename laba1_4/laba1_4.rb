@@ -1,3 +1,5 @@
+require 'prime'
+
 def index_desc(arr)
   d=arr.sort.reverse
   d.each {|x| puts arr.index(x)}
@@ -37,3 +39,11 @@ def min_even(arr)
 end
 
 min_even([1,9,-3,7,8,9])
+
+
+def all_primes(x)
+  primes, powers = x.prime_division.transpose
+  powers.each { |i| (1..i).to_a.each { |a| puts primes[powers.index(i)] } }
+end
+
+all_primes(8)
