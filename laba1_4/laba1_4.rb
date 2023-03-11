@@ -5,7 +5,6 @@ def index_desc(arr)
   d.each {|x| puts arr.index(x)}
 end
 
-index_desc([1,5,-3,8,9,-4])
 
 def between_max(arr)
   max1=arr.index(arr.max)
@@ -16,9 +15,6 @@ def between_max(arr)
                                puts arr[i] end}
   end
 end
-
-arr=[1,9,-3,7,8,-4]
-between_max(arr)
 
 
 def between_two_maxes(arr)
@@ -32,13 +28,10 @@ def between_two_maxes(arr)
 end
 
 
-between_two_maxes([1,9,-3,7,8,9])
-
 def min_even(arr)
   puts arr.select {|m| m%2==0}.min
 end
 
-min_even([1,9,-3,7,8,9])
 
 
 def all_primes(x)
@@ -46,4 +39,42 @@ def all_primes(x)
   powers.each { |i| (1..i).to_a.each { |a| puts primes[powers.index(i)] } }
 end
 
-all_primes(8)
+puts "Введите массив для обработки"
+arr = gets.chomp.split(' ').map(&:to_i)
+puts "Введённый массив: #{arr.inspect}"
+
+puts "Какую задачу решать?
+1 - Индексы элементов по убыванию
+2 - Элементы между первым и вторым максимальным
+3 - Элементы между двумя максимальными
+4 - Минимальный чётный элемент
+5 - Простые делители числа"
+
+
+puts "Чтение из файла или консоли?
+0 - Из файла
+1 - Из консоли"
+
+с=gets.chomp.to_i
+
+case c
+when 0
+  puts "Введите имя файла"
+  path=gets
+  file = File.new("#{path}","r:UTF-8")
+  n=file.read.to_i
+when 1
+  n = gets.chomp.to_i
+end
+case n
+  when 1
+    puts "Результат: #{index_desc(arr)}"
+  when 2
+    puts "Результат: #{between_max(arr)}"
+  when 3
+    puts "Результат: #{between_two_maxes(arr)}"
+  when 4
+    puts "Результат: #{min_even(arr)}"
+  when 5
+    puts "Результат: #{all_primes(arr)}"
+end
