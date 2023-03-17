@@ -50,11 +50,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679058619035</updated>
-      <workItem from="1679058621287" duration="2644000" />
+      <workItem from="1679058621287" duration="4703000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/laba2_1@main.rcov" NAME="main Coverage Results" MODIFIED="1679066905509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
   </component>
 </project>
