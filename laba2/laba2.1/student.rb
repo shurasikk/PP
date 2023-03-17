@@ -1,3 +1,5 @@
+
+
 class Student
   attr_accessor :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail, :Git
 
@@ -8,6 +10,14 @@ class Student
     self.Phone = phone
     self.Mail = mail
     self.Tg = tg
+  end
+
+  def phone_valid?(phone)
+    if phone.match(/^\+?[7,8]{1}\-\d{3}\-\d{3}\-\d{2}\-\d{2}$/)
+      "Match"
+    else
+      "No"
+    end
   end
 
   def to_s
