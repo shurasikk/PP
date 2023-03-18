@@ -88,7 +88,8 @@ class Student
   end
 
   def to_s
-    inf=@Name.to_s+" "+@Surname.to_s+" "+@Father_name.to_s+" "+@Tg.to_s
+    inf=@Name.to_s+" "+@Surname.to_s+" "+@Father_name.to_s+" "
+    inf+=@Tg.to_s unless @Tg.nil?
     inf
   end
 end
