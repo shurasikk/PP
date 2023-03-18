@@ -2,9 +2,9 @@ class Student
   attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail, :Git
 
   def initialize(name:, surname:, father_name:, id:nil, git:nil, phone:nil, tg:nil, mail:nil)
-    self.Name, self.Surname, self.Father_name = name, surname, father_name
-    self.ID = id
-    self.Git = git
+    @Name, @Surname, @Father_name = name, surname, father_name
+    @ID = id
+    @Git = git
     set_contacts(mail:mail, tg:tg, phone:phone)
   end
 
@@ -77,14 +77,16 @@ class Student
     !self.Phone.nil? || !self.Tg.nil? || !self.Mail.nil?
   end
 
-  def validate
+  def validate?
     self.git? && self.contacts?
   end
 
   def set_contacts(mail:nil, tg:nil, phone:nil)
-    self.Phone = phone if phone
-    self.Mail = mail if mail
-    self.Tg = tg if tg
+    if self.contacts?
+      @Phone = phone if self.phone_valid?(phone)
+      @Mail = mail if self.mail_valid?(mail)
+      @Tg = tg if self.acc_valid?(tg)
+    end
   end
 
   def to_s
