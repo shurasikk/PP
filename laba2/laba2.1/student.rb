@@ -121,4 +121,20 @@ class Student
     Student.new(name:str_student["name"],surname:str_student["surname"],father_name:str_student["father_name"],other:str_student)
   end
 
+  def getInfo
+    "Name: "+@Surname+" "+@Name[0]+@Father_name[0]+git_to_s+contact
+  end
+
+  def git_to_s
+    return "" if @Git.nil?
+    return ", git: #{@Git} "
+  end
+
+  def contact
+    return "phone: #{@Phone}" unless @Phone.nil?
+    return "telegram: #{@Tg}" unless @Tg.nil?
+    return "mail: #{@Mail}" unless @Mail.nil?
+    return ""
+  end
+
 end
