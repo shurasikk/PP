@@ -1,11 +1,13 @@
 class Student
   attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail, :Git
 
-  def initialize(name:, surname:, father_name:, id:nil, git:nil, phone:nil, tg:nil, mail:nil)
+  def initialize(name:, surname:, father_name:, other:{})
     @Name, @Surname, @Father_name = name, surname, father_name
-    @ID = id
-    @Git = git
-    set_contacts(mail:mail, tg:tg, phone:phone)
+    @ID = other["id"]
+    @Git = other["git"]
+    @Phone = other["phone"]
+    @Mail = other["mail"]
+    @Tg = other["tg"]
   end
 
   def self.phone_valid?(phone)
@@ -74,7 +76,7 @@ class Student
   end
 
   def contacts?
-    !self.Phone.nil? || !self.Tg.nil? || !self.Mail.nil?
+    !@Phone.nil? || !@Tg.nil? || !@Mail.nil?
   end
 
   def validate?
@@ -83,15 +85,23 @@ class Student
 
   def set_contacts(mail:nil, tg:nil, phone:nil)
     if self.contacts?
-      @Phone = phone if self.phone_valid?(phone)
-      @Mail = mail if self.mail_valid?(mail)
-      @Tg = tg if self.acc_valid?(tg)
+      @Phone = phone if phone_valid?(phone)
+      @Mail = mail if mail_valid?(mail)
+      @Tg = tg if acc_valid?(tg)
     end
   end
 
   def to_s
-    inf=@Name.to_s+" "+@Surname.to_s+" "+@Father_name.to_s+" "
-    inf+=@Tg.to_s unless @Tg.nil?
-    inf
+    info=@Name.to_s+" "+@Surname.to_s+" "+@Father_name.to_s+" "
+    info+=@Tg.to_s unless @Tg.nil?
+    info+=@Phone unless @Phone.nil?
+    info
   end
+
+  def self.parse_str(str)
+    name, surname, father_name, id, phone, tg, mail, git = string.split(' ')
+    other = { id: id, phone: phone, tg: tg, mail: mail, git: git }
+    Student.new(name:name,surname:surname, father_name:father_name, other:other)
+  end
+
 end
