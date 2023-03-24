@@ -99,9 +99,26 @@ class Student
   end
 
   def self.parse_str(str)
-    name, surname, father_name, id, phone, tg, mail, git = string.split(' ')
-    other = { id: id, phone: phone, tg: tg, mail: mail, git: git }
-    Student.new(name:name,surname:surname, father_name:father_name, other:other)
+    str_student=str.split(', ').map{|x| x.split(':')}.to_h
+    raise ArgumentError,"Invalid name" unless str_student.key?("name") && Student.name_valid?(str_student["name"])
+    raise ArgumentError,"Invalid surname" unless str_student.key?("surname") && Student.name_valid?(str_student["surname"])
+    raise ArgumentError,"Invalid father's name" unless str_student.key?("father_name") && Student.name_valid?(str_student["father_name"])
+    if str_student.key?("tg")
+      raise ArgumentError, "Invalid telegram" unless Student.acc_valid?(str_student["tg"])
+    end
+    if str_student.key?("git")
+      raise ArgumentError, "Invalid git" unless Student.acc_valid?(str_student["git"])
+    end
+    if str_student.key?("mail")
+      raise ArgumentError, "Invalid mail addres" unless Student.mail_valid?(str_student["mail"])
+    end
+    if str_student.key?("id")
+      raise ArgumentError, "Invalid id" unless Student.id_valid?(str_student["id"])
+    end
+    if str_student.key?("phone")
+      raise ArgumentError, "Invalid phone number" unless Student.phone_valid?(str_student["phone"])
+    end
+    Student.new(name:str_student["name"],surname:str_student["surname"],father_name:str_student["father_name"],other:str_student)
   end
 
 end

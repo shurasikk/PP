@@ -4,6 +4,6 @@ student = Student.new(name:"Иванов", surname:"Иван", father_name:"Ив
 puts student.to_s
 puts student.validate?
 
-str="name:Иванов,surname:Иван,father_name:Васильевич,tg:@Kjnk"
+str="name:Иванов, surname:Иван, father_name:Васильевич, tg:@Kjnk"
 second_student = Student.parse_str(str)
 puts second_student.to_s
