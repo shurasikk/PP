@@ -112,7 +112,8 @@ class Student<Student_short
   end
 
   def getInfo
-    "#{short_name}, #{contact}, #{git_to_s}"
+    short=Student_short.new(self)
+    "#{short.short_name}, #{contact}, #{git_to_s}"
   end
 
   def contact
@@ -123,9 +124,14 @@ class Student<Student_short
     return s
   end
 
-  protected
+  def self.read_from_txt(path_name)
+    raise FileNotFoundError if !File.exist?(path_name)
+    File.read(path_name).split("\n").map{|line| Student.parse_str(line)}
+  end
+
+  private
   def git_to_s
-    return "" if git?
+    return "" unless git?
     ", git: #{@Git}"
   end
 
