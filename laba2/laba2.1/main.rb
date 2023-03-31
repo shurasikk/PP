@@ -12,4 +12,4 @@ puts second_student.to_s
 puts student.getInfo
 
 students=Student.read_from_txt("some_students.txt")
-students.each { |x| puts x.to_s }
+Student.write_to_txt('result.txt',students)

@@ -1,2 +1,2 @@
-name:Иван, surname:Сидоров, father_name:Васильевич, tg:@Kjnk
+name:Иван, surname:Сидоров, father_name:Васильевич, tg:@Kjnk, git:@ert
 name:Иван, surname:Сидоров, father_name:Васильевич, phone:+7-968-123-09-51

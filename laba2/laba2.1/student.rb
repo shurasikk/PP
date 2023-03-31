@@ -118,15 +118,20 @@ class Student<Student_short
 
   def contact
     s=""
-    s+= ", phone: #{@Phone}" unless @Phone.nil?
-    s+= ", telegram: #{@Tg}" unless @Tg.nil?
-    s+= ", mail: #{@Mail}" unless @Mail.nil?
+    s+= " phone: #{@Phone}" unless @Phone.nil?
+    s+= " telegram: #{@Tg}" unless @Tg.nil?
+    s+= " mail: #{@Mail}" unless @Mail.nil?
     return s
   end
 
   def self.read_from_txt(path_name)
     raise FileNotFoundError if !File.exist?(path_name)
     File.read(path_name).split("\n").map{|line| Student.parse_str(line)}
+  end
+
+  def self.write_to_txt(path_name,student)
+    raise FileNotFoundError if !File.exist?(path_name)
+    File.open(path_name,'w') {|file| file.write(student.map{|stud|stud.getInfo}.join("\n"))}
   end
 
   private
