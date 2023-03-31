@@ -122,19 +122,20 @@ class Student
   end
 
   def getInfo
-    "Name: "+@Surname+" "+@Name[0]+@Father_name[0]+git_to_s+contact
+    "Name: "+@Surname+" "+@Name[0]+"."+@Father_name[0]+"."+git_to_s+contact
   end
 
   def git_to_s
     return "" if @Git.nil?
-    return ", git: #{@Git} "
+    return ", git: #{@Git}"
   end
 
   def contact
-    return "phone: #{@Phone}" unless @Phone.nil?
-    return "telegram: #{@Tg}" unless @Tg.nil?
-    return "mail: #{@Mail}" unless @Mail.nil?
-    return ""
+    s=""
+    s+= ", phone: #{@Phone}" unless @Phone.nil?
+    s+= ", telegram: #{@Tg}" unless @Tg.nil?
+    s+= ", mail: #{@Mail}" unless @Mail.nil?
+    return s
   end
 
 end
