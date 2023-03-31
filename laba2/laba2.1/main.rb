@@ -5,7 +5,7 @@ puts student.to_s
 puts student.validate?
 
 str="name:Иванов, surname:Иван, father_name:Васильевич, tg:@Kjnk"
-second_student = Student.parse_str(str)
+second_student = Student_short.from_s(str)
 puts second_student.to_s
 
 puts student.getInfo

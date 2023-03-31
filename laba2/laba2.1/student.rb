@@ -1,4 +1,6 @@
-class Student
+require_relative 'student_short'
+
+class Student<Student_short
   attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail, :Git
 
   def initialize(name:, surname:, father_name:, other:{})
@@ -71,18 +73,6 @@ class Student
     @Mail = mail
   end
 
-  def git?
-    !self.Git.nil?
-  end
-
-  def contacts?
-    !@Phone.nil? || !@Tg.nil? || !@Mail.nil?
-  end
-
-  def validate?
-    self.git? && self.contacts?
-  end
-
   def set_contacts(mail:nil, tg:nil, phone:nil)
     if self.contacts?
       @Phone = phone if phone_valid?(phone)
@@ -122,12 +112,7 @@ class Student
   end
 
   def getInfo
-    "Name: "+@Surname+" "+@Name[0]+"."+@Father_name[0]+"."+git_to_s+contact
-  end
-
-  def git_to_s
-    return "" if @Git.nil?
-    return ", git: #{@Git}"
+    "#{short_name}, #{contact}, #{git_to_s}"
   end
 
   def contact
@@ -136,6 +121,26 @@ class Student
     s+= ", telegram: #{@Tg}" unless @Tg.nil?
     s+= ", mail: #{@Mail}" unless @Mail.nil?
     return s
+  end
+
+  protected
+  def git_to_s
+    return "" if git?
+    ", git: #{@Git}"
+  end
+
+  def mail_to_s
+    return "" if self.Mail.nil?
+    ", email: #{@Mail}"
+  end
+  def tg_to_s
+    return "" if self.Tg.nil?
+    ", telegram: #{@Tg}"
+  end
+
+  def phone_to_s
+    return "" if self.Phone.nil?
+    ", phone: #{@Phone}"
   end
 
 end
