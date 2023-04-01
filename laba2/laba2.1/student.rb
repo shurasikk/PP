@@ -1,7 +1,7 @@
 require_relative 'student_short'
 
 class Student<Student_short
-  attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail, :Git
+  attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail
 
   def initialize(name:, surname:, father_name:, other:{})
     @Name, @Surname, @Father_name = name, surname, father_name
@@ -74,7 +74,7 @@ class Student<Student_short
   end
 
   def set_contacts(mail:nil, tg:nil, phone:nil)
-    if self.contacts?
+    if self.contact?
       @Phone = phone if phone_valid?(phone)
       @Mail = mail if mail_valid?(mail)
       @Tg = tg if acc_valid?(tg)
