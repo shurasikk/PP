@@ -1,4 +1,4 @@
-require_relative 'student_short'
+require_relative 'Super_Student'
 
 class Student<Super_Student
   attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail
@@ -104,6 +104,10 @@ class Student<Super_Student
   def self.write_to_txt(path_name,student)
     raise FileNotFoundError if !File.exist?(path_name)
     File.open(path_name,'w') {|file| file.write(student.map{|stud|stud.getInfo}.join("\n"))}
+  end
+
+  def validate?
+    git_to_s!="" && self.contact!=""
   end
 
   private
