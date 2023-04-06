@@ -5,10 +5,10 @@ class Student<Super_Student
 
   def initialize(name:, surname:, father_name:, other:{})
     super(name, surname, father_name, other["id"])
-    @Git = other["git"]
-    @Phone = other["phone"]
-    @Mail = other["mail"]
-    @Tg = other["tg"]
+    self.Git = other["git"]
+    self.Phone = other["phone"]
+    self.Mail = other["mail"]
+    self.Tg = other["tg"]
   end
 
   def self.phone_valid?(phone)
@@ -61,8 +61,8 @@ class Student<Super_Student
 
   def self.parse_str(str)
     str_student=str.split(', ').map{|x| x.split(':')}.to_h
-    raise ArgumentError,"Invalid name" unless str_student.key?("name") && Student.name_valid?(str_student["name"])
-    raise ArgumentError,"Invalid surname" unless str_student.key?(:"surname") && Student.name_valid?(str_student[:"surname"])
+    raise ArgumentError,"Invalid name " unless str_student.key?("name") && Student.name_valid?(str_student["name"])
+    raise ArgumentError,"Invalid surname" unless str_student.key?("surname") && Student.name_valid?(str_student["surname"])
     raise ArgumentError,"Invalid father's name" unless str_student.key?(:"father_name") && Student.name_valid?(str_student[:"father_name"])
     if str_student.key?("tg")
       raise ArgumentError, "Invalid telegram" unless Student.acc_valid?(str_student["tg"])
