@@ -1,4 +1,5 @@
 require_relative 'Super_Student'
+require_relative 'student'
 
 class Student_short<Super_Student
   attr_reader :ID, :Surname, :Initials,:Git,:Contact
@@ -27,10 +28,6 @@ class Student_short<Super_Student
     result += " id=#{@ID} " unless @ID.nil?
     result += @Contact unless @Contact.nil?
     result
-  end
-
-  def git?
-    !@Git.nil?
   end
 
   def contact?

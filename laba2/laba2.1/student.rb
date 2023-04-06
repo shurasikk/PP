@@ -4,8 +4,7 @@ class Student<Super_Student
   attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail
 
   def initialize(name:, surname:, father_name:, other:{})
-    @Name, @Surname, @Father_name = name, surname, father_name
-    @ID = other["id"]
+    super(name, surname, father_name, other["id"])
     @Git = other["git"]
     @Phone = other["phone"]
     @Mail = other["mail"]
@@ -55,16 +54,16 @@ class Student<Super_Student
 
   def to_s
     info=@Name.to_s+" "+@Surname.to_s+" "+@Father_name.to_s+" "
-    info+=@Tg.to_s unless @Tg.nil?
-    info+=@Phone unless @Phone.nil?
+    info+=tg_to_s
+    info+=phone_to_s
     info
   end
 
   def self.parse_str(str)
     str_student=str.split(', ').map{|x| x.split(':')}.to_h
     raise ArgumentError,"Invalid name" unless str_student.key?("name") && Student.name_valid?(str_student["name"])
-    raise ArgumentError,"Invalid surname" unless str_student.key?("surname") && Student.name_valid?(str_student["surname"])
-    raise ArgumentError,"Invalid father's name" unless str_student.key?("father_name") && Student.name_valid?(str_student["father_name"])
+    raise ArgumentError,"Invalid surname" unless str_student.key?(:"surname") && Student.name_valid?(str_student[:"surname"])
+    raise ArgumentError,"Invalid father's name" unless str_student.key?(:"father_name") && Student.name_valid?(str_student[:"father_name"])
     if str_student.key?("tg")
       raise ArgumentError, "Invalid telegram" unless Student.acc_valid?(str_student["tg"])
     end
@@ -107,7 +106,11 @@ class Student<Super_Student
   end
 
   def validate?
-    git_to_s!="" && self.contact!=""
+    git? && self.contact!=""
+  end
+
+  def git?
+    !@Git.nil?
   end
 
   private
