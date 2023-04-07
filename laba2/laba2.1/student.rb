@@ -4,11 +4,10 @@ class Student<Super_Student
   attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail
 
   def initialize(name:, surname:, father_name:, other:{})
-    super(name, surname, father_name, other["id"])
-    self.Git = other["git"]
-    self.Phone = other["phone"]
-    self.Mail = other["mail"]
-    self.Tg = other["tg"]
+    super(name, surname, father_name, other["id"], other["git"])
+    self.Phone=other["phone"]
+    self.Mail=other["mail"]
+    self.Tg=other["tg"]
   end
 
   def self.phone_valid?(phone)
@@ -20,18 +19,9 @@ class Student<Super_Student
     @Phone = phone
   end
 
-  def self.acc_valid?(account)
-    account.match(/^@[\w\d\-_]+$/)
-  end
-
   def Tg=(tg)
     raise ArgumentError, "Invalid value, Telegram account's correct form is @X where X is english alphabet sequence" if !tg.nil? && !Student.acc_valid?(tg)
     @Tg = tg
-  end
-
-  def Git=(git)
-    raise ArgumentError, "Invalid value, Git's correct form is @X where X is english alphabet sequence" if !git.nil? && !Student.acc_valid?(git)
-    @Git = git
   end
 
   def self.mail_valid?(mail)
@@ -45,10 +35,10 @@ class Student<Super_Student
   end
 
   def set_contacts(mail:nil, tg:nil, phone:nil)
-    if self.contact?
-      @Phone = phone if phone_valid?(phone)
-      @Mail = mail if mail_valid?(mail)
-      @Tg = tg if acc_valid?(tg)
+    if self.contact != ""
+      self.Phone = phone unless phone.nil?
+      self.Mail = mail unless mail.nil?
+      self.Tg = tg unless tg.nil?
     end
   end
 
@@ -89,9 +79,9 @@ class Student<Super_Student
 
   def contact
     s=""
-    s+= " phone: #{@Phone}" unless @Phone.nil?
-    s+= " telegram: #{@Tg}" unless @Tg.nil?
-    s+= " mail: #{@Mail}" unless @Mail.nil?
+    s+= self.phone_to_s
+    s+= self.tg_to_s
+    s+= self.mail_to_s
     return s
   end
 
@@ -114,10 +104,6 @@ class Student<Super_Student
   end
 
   private
-  def git_to_s
-    return "" unless git?
-    ", git: #{@Git}"
-  end
 
   def mail_to_s
     return "" if self.Mail.nil?

@@ -15,7 +15,7 @@ class Student_short<Super_Student
     Student_short.new(id:student.ID, surname:student.Surname, initials:"#{student.Name[0]}. #{student.Father_name[0]}.", git:student.Git, contact:student.contact)
   end
 
-  def self.from_s(str)
+  def self.parse_str(str)
     Student_short.from_student(Student.parse_str(str))
   end
 
