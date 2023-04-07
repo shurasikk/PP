@@ -1,13 +1,11 @@
 require_relative 'Super_Student'
 
 class Student<Super_Student
-  attr_reader :ID, :Name, :Surname, :Father_name, :Git, :Phone, :Tg, :Mail
+  attr_reader :Phone, :Tg, :Mail
 
   def initialize(name:, surname:, father_name:, other:{})
     super(name, surname, father_name, other["id"], other["git"])
-    self.Phone=other["phone"]
-    self.Mail=other["mail"]
-    self.Tg=other["tg"]
+    set_contacts(mail:other["mail"], tg:other["tg"], phone:other["phone"])
   end
 
   def self.phone_valid?(phone)
@@ -34,12 +32,10 @@ class Student<Super_Student
     @Mail = mail
   end
 
-  def set_contacts(mail:nil, tg:nil, phone:nil)
-    if self.contact != ""
+  def set_contacts(mail:, tg:, phone:)
       self.Phone = phone unless phone.nil?
       self.Mail = mail unless mail.nil?
       self.Tg = tg unless tg.nil?
-    end
   end
 
   def to_s

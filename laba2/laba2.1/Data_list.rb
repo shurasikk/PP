@@ -6,7 +6,7 @@ class Data_List
   end
 
   def select(number)
-    @Selected_id.append(@List[number])
+    @selected_id.append(@List[number].ID)
     return nil
   end
 
@@ -45,6 +45,7 @@ class Data_List
     @selected_id = selected_id
   end
 
+  protected
   def get_obj_attr(obj)
   end
 

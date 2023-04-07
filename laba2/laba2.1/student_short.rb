@@ -26,6 +26,7 @@ class Student_short<Super_Student
   def to_s
     result = short_name
     result += " id=#{@ID} " unless @ID.nil?
+    result += " git=#{@Git} " unless @Git.nil?
     result += @Contact unless @Contact.nil?
     result
   end
