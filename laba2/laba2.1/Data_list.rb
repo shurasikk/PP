@@ -6,12 +6,12 @@ class Data_List
   end
 
   def select(number)
-    @selected_id.append(@List[number].ID)
+    @selected_id.append(@list[number].ID)
     return nil
   end
 
   def get_selected
-    return @Selected_id unless @Selected_id.empty?
+    return @selected_id unless @selected_id.empty?
     []
   end
 

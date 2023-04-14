@@ -59,32 +59,20 @@
       <workItem from="1680327531205" duration="7211000" />
       <workItem from="1680723138808" duration="20266000" />
       <workItem from="1680793282920" duration="2262000" />
-      <workItem from="1680855369535" duration="14914000" />
+      <workItem from="1680855369535" duration="15086000" />
+      <workItem from="1680935156084" duration="6564000" />
+      <workItem from="1681498218379" duration="1400000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/main.rb</url>
-          <line>19</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/laba2_1@main.rcov" NAME="main Coverage Results" MODIFIED="1680878884382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
+    <SUITE FILE_PATH="coverage/laba2_1@main.rcov" NAME="main Coverage Results" MODIFIED="1680938107346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@Data_list.rcov" NAME="Data_list Coverage Results" MODIFIED="1680872569534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@Data_List_Student_Short.rcov" NAME="Data_List_Student_Short Coverage Results" MODIFIED="1680794175172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
-    <SUITE FILE_PATH="coverage/laba2_1@student.rcov" NAME="student Coverage Results" MODIFIED="1680776762156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
+    <SUITE FILE_PATH="coverage/laba2_1@student.rcov" NAME="student Coverage Results" MODIFIED="1680938100188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@Super_Student.rcov" NAME="Super_Student Coverage Results" MODIFIED="1680788858639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@student_short.rcov" NAME="student_short Coverage Results" MODIFIED="1680776384947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
   </component>

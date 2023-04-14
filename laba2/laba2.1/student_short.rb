@@ -25,10 +25,18 @@ class Student_short<Super_Student
 
   def to_s
     result = short_name
-    result += " id=#{@ID} " unless @ID.nil?
-    result += " git=#{@Git} " unless @Git.nil?
+    result += ", id=#{@ID} " unless @ID.nil?
+    result += ", git=#{@Git} " unless @Git.nil?
     result += @Contact unless @Contact.nil?
     result
+  end
+
+  def contact
+    @Contact
+  end
+
+  def getInfo
+    return self.short_name+@Git
   end
 
   def contact?
