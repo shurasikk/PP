@@ -87,12 +87,12 @@ class Student<Super_Student
   end
 
   def self.read_from_txt(path_name)
-    raise FileNotFoundError if !File.exist?(path_name)
+    raise FileNotFoundError unless File.exist?(path_name)
     File.read(path_name).split("\n").map{|line| Student.parse_str(line)}
   end
 
   def self.write_to_txt(path_name,student)
-    raise FileNotFoundError if !File.exist?(path_name)
+    raise FileNotFoundError unless File.exist?(path_name)
     File.open(path_name,'w') {|file| file.write(student.map{|stud|stud.getInfo}.join("\n"))}
   end
 

@@ -2,15 +2,14 @@ require_relative 'student'
 require_relative 'student_short'
 require_relative 'Basic_list'
 
-class Students_list_txt<Basic_list
+class Students_list_txt<Basic_format
 
-  def read_list
-    file = File.open(self.file, "r")
-    self.list=Student.read_from_txt(path_name: file)
+  def hash_to_format(hash)
+    return hash.to_s
   end
 
-  def write_list
-    Student.write_to_txt(self.file, self.list)
+  def format_to_hash(str)
+    return str.split("\n").map{|line| Student.parse_str(line)}
   end
 
 end
