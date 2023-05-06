@@ -23,3 +23,6 @@ puts(list.get_names)
 puts list.get_data
 list.select(1)
 puts list.get_selected
+
+
+
