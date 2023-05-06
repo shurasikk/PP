@@ -4,6 +4,7 @@ require_relative 'Super_Student'
 require_relative 'Data_list'
 require_relative 'data_table'
 require_relative 'Data_List_Student_Short'
+require 'mysql2'
 
 student1 = Student.new(name:"Ивaн", surname:"Иванов", father_name:"Иванович", other:{"id"=>23, "phone"=>"+7-928-431-41-43", "tg"=>"@Drkmo", "git"=>"@SMDPSKM"})
 student2 = Student.new(name:"Мария", surname:"Иванова", father_name:"Ивановна", other:{"id"=>34, "phone"=>"+7-928-431-41-43", "tg"=>"@Drkmo", "git"=>"@SMDPSKM"})
@@ -24,5 +25,17 @@ puts list.get_data
 list.select(1)
 puts list.get_selected
 
+@db_host  = "localhost"
+@db_user  = "root"
+@db_pass  = "12345"
+@db_name = "students"
 
+client = Mysql2::Client.new(:host => @db_host, :username => @db_user, :password => @db_pass, :database => @db_name)
+
+results = client.query("SELECT * FROM student", symbolize_keys: true)
+
+results.each { |r|
+  puts Student.new(**r)
+  puts
+}
 
