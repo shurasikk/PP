@@ -3,9 +3,9 @@ require_relative 'Super_Student'
 class Student<Super_Student
   attr_reader :Phone, :Tg, :Mail
 
-  def initialize(name:, surname:, father_name:, other:{})
-    super(name, surname, father_name, other["id"], other["git"])
-    set_contacts(mail:other["mail"], tg:other["tg"], phone:other["phone"])
+  def initialize(name:, surname:, father_name:, id:, git:, mail:, tg:, phone:)
+    super(name, surname, father_name, id, git)
+    set_contacts(mail:mail, tg:tg, phone:phone)
   end
 
   def self.phone_valid?(phone)
@@ -42,6 +42,7 @@ class Student<Super_Student
     info=@Name.to_s+" "+@Surname.to_s+" "+@Father_name.to_s+" "
     info+=tg_to_s
     info+=phone_to_s
+    info+=git_to_s
     info
   end
 
@@ -65,7 +66,7 @@ class Student<Super_Student
     if str_student.key?("phone")
       raise ArgumentError, "Invalid phone number" unless Student.phone_valid?(str_student["phone"])
     end
-    Student.new(name:str_student["name"],surname:str_student["surname"],father_name:str_student["father_name"],other:str_student)
+    Student.new(name:str_student["name"],surname:str_student["surname"],father_name:str_student["father_name"],id:str_student["id"],git:str_student["git"],mail:str_student["mail"],phone: str_student["phone"], tg:str_student["tg"])
   end
 
   def getInfo
@@ -118,6 +119,11 @@ class Student<Super_Student
   def phone_to_s
     return "" if self.Phone.nil?
     ", phone: #{@Phone}"
+  end
+
+  def git_to_s
+    return "" if self.Git.nil?
+    ", git: #{@Git}"
   end
 
 end

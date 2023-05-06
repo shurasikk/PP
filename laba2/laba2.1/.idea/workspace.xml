@@ -102,7 +102,7 @@
       <workItem from="1682726300974" duration="589000" />
       <workItem from="1683303564874" duration="3043000" />
       <workItem from="1683306853951" duration="822000" />
-      <workItem from="1683355213039" duration="3308000" />
+      <workItem from="1683355213039" duration="6372000" />
     </task>
     <servers />
   </component>
@@ -110,7 +110,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/laba2_1@main.rcov" NAME="main Coverage Results" MODIFIED="1683359000800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
+    <SUITE FILE_PATH="coverage/laba2_1@main.rcov" NAME="main Coverage Results" MODIFIED="1683362823748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@Data_list.rcov" NAME="Data_list Coverage Results" MODIFIED="1680872569534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@Data_List_Student_Short.rcov" NAME="Data_List_Student_Short Coverage Results" MODIFIED="1680794175172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
     <SUITE FILE_PATH="coverage/laba2_1@create_table_script.rcov" NAME="create_table_script Coverage Results" MODIFIED="1683356761034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="laba2.1" />
