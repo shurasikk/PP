@@ -20,7 +20,7 @@ client = Mysql2::Client.new(:host => @db_host, :username => @db_user, :password 
 results = client.query("SELECT * FROM student", symbolize_keys: true)
 
 results.each { |r|
-  puts Student.new(**r).to_s
+  puts Student.new(**r)
   puts
 }
 
