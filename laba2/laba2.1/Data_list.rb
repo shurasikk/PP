@@ -1,55 +1,44 @@
-class Data_List
+require_relative 'data_table'
+class Data_list
+  private
+  attr_accessor :selected
+  public
+  attr_accessor :list
 
-  def initialize(objects:)
-    self.list = objects
-    self.selected_id = []
+  def initialize(list:)
+    self.list = list
+
   end
 
   def select(number)
-    @selected_id.append(@list[number].ID)
+    self.selected.append(self.list[number])
     return nil
   end
-
   def get_selected
-    return @selected_id unless @selected_id.empty?
-    []
+    temp = self.selected
+    self.selected = []
+    return temp
   end
-
   def get_names
-    ["№", *get_obj_attr_names]
+    return ["№", *get_objects_attr_names]
   end
-
   def get_data
-    table=[]
-    counter=0
-    @list.each {|obj| table.append([counter, *get_obj_attr(obj)]); counter+=1}
-    Data_table.new(table:table)
-    table
+    table = []
+    counter = 0
+    list.each { |obj| table.append([counter, *get_objects_attr(obj)]); counter += 1}
+    return Data_table.new(table: table)
   end
+
+  #def replace_objects(list)
+  #  self.list=list.dup
+  #end
 
   protected
-  def list
-    @list
-  end
 
-  def list=(list)
-    @list = list
+  def get_objects_attr(obj)
+    return []
   end
-
-  private
-  def selected_id
-    @selected_id
+  def get_objects_attr_names()
+    return []
   end
-
-  def selected_id=(selected_id)
-    @selected_id = selected_id
-  end
-
-  protected
-  def get_obj_attr(obj)
-  end
-
-  def get_obj_attr_names()
-  end
-
 end

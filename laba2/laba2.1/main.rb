@@ -7,6 +7,10 @@ require_relative 'Data_List_Student_Short'
 require 'mysql2'
 require 'fox16'
 require_relative 'window'
+require 'mysql2'
+require_relative 'student_list_controller'
+require_relative 'main_window'
+
 
 
 str="name:Василий, surname:Васнецов, father_name:Анатольевич, id:11, git:@fdsa, tg:@qpfms"
@@ -26,7 +30,4 @@ str="name:Василий, surname:Васнецов, father_name:Анатолье
 #puts
 #}
 
-app = FXApp.new
-Window.new(app)
-app.create
-app.run
+Student_List_View.new

@@ -1,6 +1,6 @@
 require_relative 'Data_list'
 
-class Data_List_Student_Short<Data_List
+class Data_List_Student_Short<Data_list
 
   attr_accessor :view
 
