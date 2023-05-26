@@ -3,7 +3,7 @@ require_relative 'Super_Student'
 class Student<Super_Student
   attr_reader :Phone, :Tg, :Mail
 
-  def initialize(name:, surname:, father_name:, id:, git:, mail:, tg:, phone:)
+  def initialize(name:, surname:, father_name:, id:nil, git:nil, mail:nil, tg:nil, phone:nil)
     super(name, surname, father_name, id, git)
     set_contacts(mail:mail, tg:tg, phone:phone)
   end
