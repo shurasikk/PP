@@ -1,23 +1,24 @@
 require_relative 'data_table'
 class Data_list
   private
-  attr_accessor :selected
+  attr_accessor :selected, :arary
   public
   attr_accessor :list
 
   def initialize(list:)
     self.list = list
+    self.arary = []
+  end
 
+  def unselect
+    self.arary = []
   end
 
   def select(number)
-    self.selected.append(self.list[number])
-    return nil
+    self.arary.append(self.list[number].ID)
   end
   def get_selected
-    temp = self.selected
-    self.selected = []
-    return temp
+    self.arary
   end
   def get_names
     return ["№", *get_objects_attr_names]

@@ -36,6 +36,12 @@ class Student_List_View
     app.create
 
     self.controller = StudentListController.new(self)
+
+    self.window.del_button.connect(SEL_COMMAND) do
+      self.controller.del_selected
+      self.refresh
+    end
+
     self.refresh
 
     app.run
@@ -51,6 +57,12 @@ class Student_List_View
     cells_selected_handler = Proc.new do
       all_cols_selected = table.selEndColumn - table.selStartColumn + 1 == table.numColumns
       num_selected_rows = table.selEndRow - table.selStartRow + 1
+
+      self.controller.unselect
+
+      (table.selStartRow..table.selEndRow).each do |row|
+        self.controller.select(row)
+      end
 
       if num_selected_rows == 1 and all_cols_selected
         chg_button.enable
@@ -77,8 +89,10 @@ class Student_List_View
     end
   end
 
+  attr_accessor :window
+
   private
-  attr_accessor :window, :controller
+  attr_accessor :controller
 
   def set_tab_book_handler
     window.tabBook.connect(SEL_COMMAND) do |sender, selector, data|
