@@ -17,6 +17,7 @@ class Student_List_View
 
       (0...data_table.get_cols_number).each do |y|
         value = data_table.get_element(row:x, col:y)
+        puts value
         table.setItemText(x, y, value.to_s)
       end
     end

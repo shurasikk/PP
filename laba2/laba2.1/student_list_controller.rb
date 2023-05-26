@@ -39,7 +39,7 @@ class StudentListController
   end
 
   def refresh_data(reload: false)
-    if(reload) then
+    if (reload) then
       self.load_list()
     end
 
@@ -77,7 +77,6 @@ class StudentListController
 
   def load_list
     self.list.read_list
-    puts(self.list.list)
   end
 
 end

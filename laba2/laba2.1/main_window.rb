@@ -27,7 +27,7 @@ class MainWindow < FXMainWindow
     # Гит
     self.add_git_field(hFrame1)
 
-    # Мыло
+    # Мейл
     hFrame2 = FXHorizontalFrame.new(vFrame1)
     self.add_email_field(hFrame2)
 
@@ -52,7 +52,7 @@ class MainWindow < FXMainWindow
     hFrame7 = FXHorizontalFrame.new(vFrame1, opts: LAYOUT_FILL_X)
     add_lcr_buttons(hFrame7)
 
-    # Кнопочки
+    # Кнопки
     hFrame8 = FXHorizontalFrame.new(vFrame1, opts: LAYOUT_FILL_X)
     add_crud_buttons(hFrame8)
   end

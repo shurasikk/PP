@@ -29,10 +29,6 @@ class Data_list
     return Data_table.new(table: table)
   end
 
-  #def replace_objects(list)
-  #  self.list=list.dup
-  #end
-
   protected
 
   def get_objects_attr(obj)

@@ -20,7 +20,6 @@ class Student_list_DB < Basic_format
 
   def read_file(rfile:)
     results = client.query("SELECT * FROM student", symbolize_keys: true).to_a
-    puts results
     return JSON.pretty_generate(results)
   end
 
